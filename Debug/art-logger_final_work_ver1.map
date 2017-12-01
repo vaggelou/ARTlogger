@@ -1,0 +1,560 @@
+******************************************************************************
+                  TI ARM Linker PC v5.2.5                      
+******************************************************************************
+>> Linked Thu Jan 26 17:29:09 2017
+
+OUTPUT FILE NAME:   <art-logger_final_work_ver1.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00007bc9
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  00008378  000f7c88  R  X
+  SRAM                  20000000   00040000  00003904  0003c6fc  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00008378   00008378    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    00007e54   00007e54    r-x .text
+  0000805c    0000805c    000002a4   000002a4    r-- .const
+  00008300    00008300    00000078   00000078    r-- .cinit
+20000000    20000000    00003904   00000000    rw-
+  20000000    20000000    00002000   00000000    rw- .stack
+  20002000    20002000    000018a4   00000000    rw- .bss
+  200038a4    200038a4    00000060   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c1294ncpdt_startup_ccs.obj (.intvecs)
+
+.text      0    00000208    00007e54     
+                  00000208    00002ed4     ff.obj (.text)
+                  000030dc    00001e20     art-logger_work_ver1.obj (.text)
+                  00004efc    00000cd8     i2cm_drv.obj (.text)
+                  00005bd4    00000a10     mmc-ek-tm4c1294xl.obj (.text)
+                  000065e4    0000095c     mpu9150.obj (.text)
+                  00006f40    000004dc     uartstdio.obj (.text)
+                  0000741c    00000204     driverlib.lib : sysctl.obj (.text:SysCtlClockFreqSet)
+                  00007620    00000136                   : can.obj (.text:CANMessageSet)
+                  00007756    00000132                   : gpio.obj (.text:GPIOPadConfigSet)
+                  00007888    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  00007984    0000009c                                   : memcpy_t2.obj (.text)
+                  00007a20    0000007a                                   : memset_t2.obj (.text)
+                  00007a9a    00000002                                   : i_div0.obj (.text)
+                  00007a9c    0000006c                                   : autoinit.obj (.text)
+                  00007b08    0000006a                                   : copy_decompress_rle.obj (.text)
+                  00007b72    00000056     driverlib.lib : gpio.obj (.text:GPIOIntTypeSet)
+                  00007bc8    00000050     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  00007c18    0000004c                                   : cpy_tbl.obj (.text)
+                  00007c64    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  00007cac    00000048                   : sysctl.obj (.text:_SysCtlFrequencyGet)
+                  00007cf4    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.obj (.text)
+                  00007d3c    00000044                                   : exit.obj (.text)
+                  00007d80    00000040                                   : u_divt2.obj (.text)
+                  00007dc0    00000038                                   : fs_tod_t2.obj (.text)
+                  00007df8    00000036     ak8975.obj (.text:I2CMRead)
+                  00007e2e    00000036     ak8975.obj (.text:I2CMWrite)
+                  00007e64    00000036     ak8975.obj (.text:I2CMWriteBatched)
+                  00007e9a    00000002     --HOLE-- [fill = 0]
+                  00007e9c    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralDisable)
+                  00007ed0    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00007f04    0000002a                   : gpio.obj (.text:GPIODirModeSet)
+                  00007f2e    00000024                   : can.obj (.text:_CANDataRegWrite)
+                  00007f52    00000002     --HOLE-- [fill = 0]
+                  00007f54    00000020                   : sysctl.obj (.text:_SysCtlMemTimingGet)
+                  00007f74    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00007f8c    00000018                                   : strcmp.obj (.text)
+                  00007fa4    00000014                                   : _lock.obj (.text)
+                  00007fb8    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeCAN)
+                  00007fca    00000012                   : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  00007fdc    00000012                   : gpio.obj (.text:GPIOPinTypeI2C)
+                  00007fee    00000012                   : gpio.obj (.text:GPIOPinTypeI2CSCL)
+                  00008000    0000000e                   : gpio.obj (.text:GPIOIntStatus)
+                  0000800e    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000801c    0000000c     driverlib.lib : gpio.obj (.text:GPIOIntEnable)
+                  00008028    0000000c                   : interrupt.obj (.text:IntTrigger)
+                  00008034    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00008040    0000000c     tm4c1294ncpdt_startup_ccs.obj (.text)
+                  0000804c    00000006     driverlib.lib : gpio.obj (.text:GPIOIntClear)
+                  00008052    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  00008058    00000004                                   : pre_init.obj (.text)
+
+.const     0    0000805c    000002a4     
+                  0000805c    00000120     driverlib.lib : sysctl.obj (.const:g_pppui32XTALtoVCO)
+                  0000817c    00000090                   : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  0000820c    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00008278    00000030                   : sysctl.obj (.const:g_sXTALtoMEMTIM)
+                  000082a8    00000020     mpu9150.obj (.const)
+                  000082c8    0000001c     uartstdio.obj (.const)
+                  000082e4    00000012     uartstdio.obj (.const:.string)
+                  000082f6    00000002     --HOLE-- [fill = 0]
+                  000082f8    00000008     driverlib.lib : sysctl.obj (.const)
+
+.cinit     0    00008300    00000078     
+                  00008300    00000053     (.cinit..data.load) [load image, compression = rle]
+                  00008353    00000001     --HOLE-- [fill = 0]
+                  00008354    0000000c     (__TI_handler_table)
+                  00008360    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00008368    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00002000     UNINITIALIZED
+                  20000000    00002000     --HOLE--
+
+.bss       0    20002000    000018a4     UNINITIALIZED
+                  20002000    00000e80     art-logger_work_ver1.obj (.bss:CAN1ItemsVector)
+                  20002e80    00000300     art-logger_work_ver1.obj (.bss:analogChannelVector)
+                  20003180    00000234     art-logger_work_ver1.obj (.bss:driveObj)
+                  200033b4    00000224     art-logger_work_ver1.obj (.bss:fileObj)
+                  200035d8    00000124     art-logger_work_ver1.obj (.bss:g_sI2CInst)
+                  200036fc    0000006c     art-logger_work_ver1.obj (.bss:g_sMPU9150Inst)
+                  20003768    00000064     art-logger_work_ver1.obj (.bss:GPSString)
+                  200037cc    00000040     art-logger_work_ver1.obj (.bss:ui32ADCBuffer)
+                  2000380c    00000020     (.common:demoRec)
+                  2000382c    00000014     (.common:CANMsgObj)
+                  20003840    0000000c     (.common:g_pfAccel)
+                  2000384c    0000000c     (.common:longi)
+                  20003858    0000000c     (.common:prevLati)
+                  20003864    0000000c     (.common:prevLongi)
+                  20003870    00000008     (.common:g_i16Accel)
+                  20003878    00000008     (.common:g_pui32TimeStamp)
+                  20003880    00000004     (.common:FatFs)
+                  20003884    00000004     (.common:g_vui8ErrorFlag)
+                  20003888    00000004     (.common:g_vui8I2CDoneFlag)
+                  2000388c    00000004     (.common:prevSpeed)
+                  20003890    00000004     (.common:ui32LastSysTickCount)
+                  20003894    00000004     (.common:ui32SysTickCount)
+                  20003898    00000004     (.common:ui32SystemClock)
+                  2000389c    00000002     (.common:Fsid)
+                  2000389e    00000001     (.common:CardType)
+                  2000389f    00000001     (.common:GPSIntFlag)
+                  200038a0    00000001     (.common:Timer1)
+                  200038a1    00000001     (.common:Timer2)
+                  200038a2    00000001     (.common:bCANErrorFlag)
+                  200038a3    00000001     (.common:startLogging)
+
+.TI.noinit 
+*          0    20002000    00000000     UNINITIALIZED
+
+.data      0    200038a4    00000060     UNINITIALIZED
+                  200038a4    00000025     art-logger_work_ver1.obj (.data:cGPSHeaders)
+                  200038c9    0000001d     art-logger_work_ver1.obj (.data)
+                  200038e6    00000002     mmc-ek-tm4c1294xl.obj (.data)
+                  200038e8    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  200038f0    00000008                                   : exit.obj (.data)
+                  200038f8    00000005     uartstdio.obj (.data)
+                  200038fd    00000003     --HOLE--
+                  20003900    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+
+.TI.persistent 
+*          0    200038a4    00000000     UNINITIALIZED
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00008368 records: 2, size/record: 8, table size: 16
+	.data: load addr=00008300, load size=00000053 bytes, run addr=200038a4, run size=00000060 bytes, compression=rle
+	.bss: load addr=00008360, load size=00000008 bytes, run addr=20002000, run size=000018a4 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00008354 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                      
+-------   ----                      
+00003893  ADC0SS0Handler            
+000038b5  ADC1SS0Handler            
+00007d3d  C$$EXIT                   
+0000390b  CAN1IntHandler            
+20002000  CAN1ItemsVector           
+000039a1  CANConfigure              
+00007621  CANMessageSet             
+2000382c  CANMsgObj                 
+000030dd  ConfigureUART             
+000032e1  CurrentToPreviousGPSData  
+000041e5  DAQInit                   
+0000435d  DAQRun                    
+0000427d  DAQStart                  
+000043b1  DAQStop                   
+00007f05  GPIODirModeSet            
+0000804d  GPIOIntClear              
+0000801d  GPIOIntEnable             
+00008001  GPIOIntStatus             
+00007b73  GPIOIntTypeSet            
+00007757  GPIOPadConfigSet          
+00007c65  GPIOPinConfigure          
+00007fb9  GPIOPinTypeCAN            
+00007fcb  GPIOPinTypeGPIOInput      
+00007fdd  GPIOPinTypeI2C            
+00007fef  GPIOPinTypeI2CSCL         
+00003197  GPSInit                   
+2000389f  GPSIntFlag                
+20003768  GPSString                 
+00003ac9  GetCANMessage             
+000055b3  I2CMCommand               
+0000554b  I2CMInit                  
+0000541f  I2CMIntHandler            
+00007df9  I2CMRead                  
+00005a99  I2CMRead16BE              
+000058bd  I2CMReadModifyWrite16LE   
+0000576d  I2CMReadModifyWrite8      
+00005697  I2CMTransferResume        
+00007e2f  I2CMWrite                 
+00005b5f  I2CMWrite16BE             
+000059cd  I2CMWrite8                
+00007e65  I2CMWriteBatched          
+000036cf  InitADC                   
+00003c49  InitializeMPU9150         
+00003bf5  IntGPIOb                  
+00008029  IntTrigger                
+00003b95  MPU9150AppCallback        
+00003bc5  MPU9150AppI2CWait         
+00006c2d  MPU9150DataAccelGetFloat  
+00006bd5  MPU9150DataAccelGetRaw    
+00006d27  MPU9150DataGyroGetFloat   
+00006ccf  MPU9150DataGyroGetRaw     
+00006e81  MPU9150DataMagnetoGetFloat
+00006e29  MPU9150DataMagnetoGetRaw  
+00006b61  MPU9150DataRead           
+00003c21  MPU9150I2CIntHandler      
+00006911  MPU9150Init               
+000069a3  MPU9150MagnetoInstGet     
+000069b1  MPU9150Read               
+00006afb  MPU9150ReadModifyWrite    
+00006a21  MPU9150Write              
+0000339d  ParseTokenGPS             
+00003267  PreviousToCurrentGPSData  
+00003d35  PrintAccelerometerData    
+00003ed1  ProcessDataItems          
+00008041  ResetISR                  
+00003de1  RestartMPU9150            
+00004cc9  SDCardCloseFile           
+00004561  SDCardOpenLogFile         
+00004979  SDCardWriteLoggedData     
+UNDEFED   SHT$$INIT_ARRAY$$Base     
+UNDEFED   SHT$$INIT_ARRAY$$Limit    
+00003a61  SetRecordingCANChannels   
+00004415  SetThresholdValue         
+0000741d  SysCtlClockFreqSet        
+00007e9d  SysCtlPeripheralDisable   
+00007ed1  SysCtlPeripheralEnable    
+000038d7  SysTickIntHandler         
+0000313f  UART6Init                 
+0000365b  UARTIntHandler            
+00006f41  UARTStdioConfig           
+000070b9  UARTgetc                  
+00006ff3  UARTgets                  
+000073e7  UARTprintf                
+000070ed  UARTvprintf               
+00006fa1  UARTwrite                 
+20002000  __STACK_END               
+00002000  __STACK_SIZE              
+20002000  __STACK_TOP               
+00008368  __TI_CINIT_Base           
+00008378  __TI_CINIT_Limit          
+00008354  __TI_Handler_Table_Base   
+00008360  __TI_Handler_Table_Limit  
+00007a9d  __TI_auto_init            
+200038f0  __TI_cleanup_ptr          
+0000800f  __TI_decompress_none      
+00008053  __TI_decompress_rle24     
+200038f4  __TI_dtors_ptr            
+00000000  __TI_static_base__        
+00008035  __TI_zero_init            
+00007cf5  __aeabi_d2f               
+00007889  __aeabi_dmul              
+00007dc1  __aeabi_f2d               
+00007a9b  __aeabi_idiv0             
+00007a21  __aeabi_memclr            
+00007a21  __aeabi_memclr4           
+00007a21  __aeabi_memclr8           
+00007985  __aeabi_memcpy            
+00007985  __aeabi_memcpy4           
+00007985  __aeabi_memcpy8           
+00007a23  __aeabi_memset            
+00007a23  __aeabi_memset4           
+00007a23  __aeabi_memset8           
+00007d81  __aeabi_uidiv             
+00007d81  __aeabi_uidivmod          
+ffffffff  __binit__                 
+ffffffff  __c_args__                
+20000000  __stack                   
+00007f75  _args_main                
+00007bc9  _c_int00                  
+200038e8  _lock                     
+00007fb3  _nop                      
+00007fab  _register_lock            
+00007fa5  _register_unlock          
+00008059  _system_pre_init          
+200038ec  _unlock                   
+00007d41  abort                     
+20002e80  analogChannelVector       
+200038a2  bCANErrorFlag             
+ffffffff  binit                     
+200038ca  cAccelHeaders             
+200038a4  cGPSHeaders               
+000004a1  clust2sect                
+00007c19  copy_in                   
+2000380c  demoRec                   
+0000602d  disk_initialize           
+00006389  disk_ioctl                
+000061eb  disk_read                 
+000061d1  disk_status               
+0000658b  disk_timerproc            
+0000629b  disk_write                
+00007d49  exit                      
+000029b5  f_chmod                   
+0000207d  f_close                   
+00002477  f_getfree                 
+00002c21  f_gets                    
+0000209d  f_lseek                   
+000027cf  f_mkdir                   
+0000181f  f_mount                   
+00001875  f_open                    
+000022eb  f_opendir                 
+00002cfb  f_printf                  
+00002c89  f_putc                    
+00002cc1  f_puts                    
+00001a89  f_read                    
+0000239b  f_readdir                 
+00002ac9  f_rename                  
+00002427  f_stat                    
+00001f81  f_sync                    
+000025d9  f_truncate                
+000026cd  f_unlink                  
+00002a45  f_utime                   
+00001cdd  f_write                   
+20003870  g_i16Accel                
+20003840  g_pfAccel                 
+00000000  g_pfnVectors              
+200035d8  g_sI2CInst                
+200036fc  g_sMPU9150Inst            
+20003884  g_vui8ErrorFlag           
+20003888  g_vui8I2CDoneFlag         
+000004d1  get_fat                   
+000065cf  get_fattime               
+2000384c  longi                     
+00004d75  main                      
+20003900  main_func_sp              
+00007985  memcpy                    
+00007a29  memset                    
+20003858  prevLati                  
+20003864  prevLongi                 
+2000388c  prevSpeed                 
+000005f5  put_fat                   
+200038a3  startLogging              
+00007f8d  strcmp                    
+200037cc  ui32ADCBuffer             
+20003898  ui32SystemClock           
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                      
+-------   ----                      
+00000000  __TI_static_base__        
+00000000  g_pfnVectors              
+000004a1  clust2sect                
+000004d1  get_fat                   
+000005f5  put_fat                   
+0000181f  f_mount                   
+00001875  f_open                    
+00001a89  f_read                    
+00001cdd  f_write                   
+00001f81  f_sync                    
+00002000  __STACK_SIZE              
+0000207d  f_close                   
+0000209d  f_lseek                   
+000022eb  f_opendir                 
+0000239b  f_readdir                 
+00002427  f_stat                    
+00002477  f_getfree                 
+000025d9  f_truncate                
+000026cd  f_unlink                  
+000027cf  f_mkdir                   
+000029b5  f_chmod                   
+00002a45  f_utime                   
+00002ac9  f_rename                  
+00002c21  f_gets                    
+00002c89  f_putc                    
+00002cc1  f_puts                    
+00002cfb  f_printf                  
+000030dd  ConfigureUART             
+0000313f  UART6Init                 
+00003197  GPSInit                   
+00003267  PreviousToCurrentGPSData  
+000032e1  CurrentToPreviousGPSData  
+0000339d  ParseTokenGPS             
+0000365b  UARTIntHandler            
+000036cf  InitADC                   
+00003893  ADC0SS0Handler            
+000038b5  ADC1SS0Handler            
+000038d7  SysTickIntHandler         
+0000390b  CAN1IntHandler            
+000039a1  CANConfigure              
+00003a61  SetRecordingCANChannels   
+00003ac9  GetCANMessage             
+00003b95  MPU9150AppCallback        
+00003bc5  MPU9150AppI2CWait         
+00003bf5  IntGPIOb                  
+00003c21  MPU9150I2CIntHandler      
+00003c49  InitializeMPU9150         
+00003d35  PrintAccelerometerData    
+00003de1  RestartMPU9150            
+00003ed1  ProcessDataItems          
+000041e5  DAQInit                   
+0000427d  DAQStart                  
+0000435d  DAQRun                    
+000043b1  DAQStop                   
+00004415  SetThresholdValue         
+00004561  SDCardOpenLogFile         
+00004979  SDCardWriteLoggedData     
+00004cc9  SDCardCloseFile           
+00004d75  main                      
+0000541f  I2CMIntHandler            
+0000554b  I2CMInit                  
+000055b3  I2CMCommand               
+00005697  I2CMTransferResume        
+0000576d  I2CMReadModifyWrite8      
+000058bd  I2CMReadModifyWrite16LE   
+000059cd  I2CMWrite8                
+00005a99  I2CMRead16BE              
+00005b5f  I2CMWrite16BE             
+0000602d  disk_initialize           
+000061d1  disk_status               
+000061eb  disk_read                 
+0000629b  disk_write                
+00006389  disk_ioctl                
+0000658b  disk_timerproc            
+000065cf  get_fattime               
+00006911  MPU9150Init               
+000069a3  MPU9150MagnetoInstGet     
+000069b1  MPU9150Read               
+00006a21  MPU9150Write              
+00006afb  MPU9150ReadModifyWrite    
+00006b61  MPU9150DataRead           
+00006bd5  MPU9150DataAccelGetRaw    
+00006c2d  MPU9150DataAccelGetFloat  
+00006ccf  MPU9150DataGyroGetRaw     
+00006d27  MPU9150DataGyroGetFloat   
+00006e29  MPU9150DataMagnetoGetRaw  
+00006e81  MPU9150DataMagnetoGetFloat
+00006f41  UARTStdioConfig           
+00006fa1  UARTwrite                 
+00006ff3  UARTgets                  
+000070b9  UARTgetc                  
+000070ed  UARTvprintf               
+000073e7  UARTprintf                
+0000741d  SysCtlClockFreqSet        
+00007621  CANMessageSet             
+00007757  GPIOPadConfigSet          
+00007889  __aeabi_dmul              
+00007985  __aeabi_memcpy            
+00007985  __aeabi_memcpy4           
+00007985  __aeabi_memcpy8           
+00007985  memcpy                    
+00007a21  __aeabi_memclr            
+00007a21  __aeabi_memclr4           
+00007a21  __aeabi_memclr8           
+00007a23  __aeabi_memset            
+00007a23  __aeabi_memset4           
+00007a23  __aeabi_memset8           
+00007a29  memset                    
+00007a9b  __aeabi_idiv0             
+00007a9d  __TI_auto_init            
+00007b73  GPIOIntTypeSet            
+00007bc9  _c_int00                  
+00007c19  copy_in                   
+00007c65  GPIOPinConfigure          
+00007cf5  __aeabi_d2f               
+00007d3d  C$$EXIT                   
+00007d41  abort                     
+00007d49  exit                      
+00007d81  __aeabi_uidiv             
+00007d81  __aeabi_uidivmod          
+00007dc1  __aeabi_f2d               
+00007df9  I2CMRead                  
+00007e2f  I2CMWrite                 
+00007e65  I2CMWriteBatched          
+00007e9d  SysCtlPeripheralDisable   
+00007ed1  SysCtlPeripheralEnable    
+00007f05  GPIODirModeSet            
+00007f75  _args_main                
+00007f8d  strcmp                    
+00007fa5  _register_unlock          
+00007fab  _register_lock            
+00007fb3  _nop                      
+00007fb9  GPIOPinTypeCAN            
+00007fcb  GPIOPinTypeGPIOInput      
+00007fdd  GPIOPinTypeI2C            
+00007fef  GPIOPinTypeI2CSCL         
+00008001  GPIOIntStatus             
+0000800f  __TI_decompress_none      
+0000801d  GPIOIntEnable             
+00008029  IntTrigger                
+00008035  __TI_zero_init            
+00008041  ResetISR                  
+0000804d  GPIOIntClear              
+00008053  __TI_decompress_rle24     
+00008059  _system_pre_init          
+00008354  __TI_Handler_Table_Base   
+00008360  __TI_Handler_Table_Limit  
+00008368  __TI_CINIT_Base           
+00008378  __TI_CINIT_Limit          
+20000000  __stack                   
+20002000  CAN1ItemsVector           
+20002000  __STACK_END               
+20002000  __STACK_TOP               
+20002e80  analogChannelVector       
+200035d8  g_sI2CInst                
+200036fc  g_sMPU9150Inst            
+20003768  GPSString                 
+200037cc  ui32ADCBuffer             
+2000380c  demoRec                   
+2000382c  CANMsgObj                 
+20003840  g_pfAccel                 
+2000384c  longi                     
+20003858  prevLati                  
+20003864  prevLongi                 
+20003870  g_i16Accel                
+20003884  g_vui8ErrorFlag           
+20003888  g_vui8I2CDoneFlag         
+2000388c  prevSpeed                 
+20003898  ui32SystemClock           
+2000389f  GPSIntFlag                
+200038a2  bCANErrorFlag             
+200038a3  startLogging              
+200038a4  cGPSHeaders               
+200038ca  cAccelHeaders             
+200038e8  _lock                     
+200038ec  _unlock                   
+200038f0  __TI_cleanup_ptr          
+200038f4  __TI_dtors_ptr            
+20003900  main_func_sp              
+ffffffff  __binit__                 
+ffffffff  __c_args__                
+ffffffff  binit                     
+UNDEFED   SHT$$INIT_ARRAY$$Base     
+UNDEFED   SHT$$INIT_ARRAY$$Limit    
+
+[184 symbols]
